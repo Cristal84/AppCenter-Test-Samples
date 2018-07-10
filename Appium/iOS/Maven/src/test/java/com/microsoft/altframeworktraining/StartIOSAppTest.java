@@ -59,7 +59,8 @@ public class StartIOSAppTest {
     public void canStartAppInTest() throws MalformedURLException, InterruptedException {
         driver = startApp();
         driver.label("App Launched");
-        IOSElement elem =  driver.findElement(By.name("Add"));
+        IOSElement elem =  driver.findElementByIosNsPredicate("value = 'Add'");
+        //IOSElement elem =  driver.findElement(By.name("Add"));
         elem.click();
         Thread.sleep(5000);
         driver.label("tapped Add button");
